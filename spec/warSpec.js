@@ -237,7 +237,7 @@ describe('driver().drive', function () {
     expect(obj.gas).toEqual(0);
   });
 
-  it('should NOT increase the "gas" property on the given "state" object if its "gas" property is less than 1', function () {
+  it('should NOT decrease the "gas" property on the given "state" object if its "gas" property is less than 1', function () {
     var state = {
       gas: 0,
       position: 0
@@ -269,36 +269,36 @@ describe('plane', function () {
 });
 
 describe('medicJeep', function () {
-  it('should be a refueler, a flyer and a saver', function () {
+  it('should be a refueler, a driver and a saver', function () {
     var medicJeep1 = medicJeep();
 
     var props = [
       'refuel',
-      'fly',
+      'drive',
       'save'
     ];
 
     props.forEach(function(prop){
       expect(medicJeep1).toHaveProperty('refuel');
-      expect(medicJeep1).toHaveProperty('fly');
+      expect(medicJeep1).toHaveProperty('drive');
       expect(medicJeep1).toHaveProperty('save');
     });
   });
 });
 
 describe('attackJeep', function () {
-  it('should be a refueler, a flyer and a shooter', function () {
+  it('should be a refueler, a driver and a shooter', function () {
     var attackJeep1 = attackJeep();
 
     var props = [
       'refuel',
-      'fly',
+      'drive',
       'shoot'
     ];
 
     props.forEach(function(prop){
       expect(attackJeep1).toHaveProperty('refuel');
-      expect(attackJeep1).toHaveProperty('fly');
+      expect(attackJeep1).toHaveProperty('drive');
       expect(attackJeep1).toHaveProperty('shoot');
     });
   });
